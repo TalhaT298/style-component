@@ -5,9 +5,11 @@ import Services from './Services';
 import {BrowserRouter , Routes,  Route} from "react-router-dom"
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { ThemeProvider } from "styled-components"
 
 const App = () => {
   return (
+    <ThemeProvider>
     <BrowserRouter>
     <Header></Header>
       <Routes>
@@ -35,6 +37,7 @@ const App = () => {
       <Footer></Footer>
 
     </BrowserRouter>
+    </ThemeProvider>
 
   );
 };
