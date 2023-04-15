@@ -1,31 +1,15 @@
-// import React from 'react';
-// import { NavLink } from 'react-router-dom';
-// import Nav from './Nav';
-
-// const Header = () => {
-//     return (
-//         <div>
-//             <NavLink to="/">
-//                 <img src='https://i.ibb.co/tw0nZC6/Untitled-design-10.png' alt='logo'></img>
-//             </NavLink>
-//             <Nav></Nav>
-//         </div>
-//     );
-// };
-
-// export default Header;
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Nav from './Nav';
+import Navbar from "./Navbar";
 import styled from "styled-components";
 
 const Header = () => {
   return (
     <MainHeader>
       <NavLink to="/">
-        <img src=".https://i.ibb.co/tw0nZC6/Untitled-design-10.png" alt="logo" className="logo" />
+        <img src="./images/logo.png" alt="logo" className="logo" />
       </NavLink>
-      <Nav></Nav>
+      <Navbar />
     </MainHeader>
   );
 };

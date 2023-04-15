@@ -1,14 +1,16 @@
-import Home from './Home';
-import About from './About';
-import Contact from './Contact';
-import Services from './Services';
-import {BrowserRouter , Routes,  Route} from "react-router-dom"
-import Header from './components/Header';
-import Footer from './components/Footer';
-import { ThemeProvider } from "styled-components"
+import About from "./About";
+import Contact from "./Contact";
+import Home from "./Home";
+import Services from "./Services";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyle } from "./GlobalStyle";
+import Error from "./Error";
+import GoToTop from "./components/GoToTop";
 
 const App = () => {
-
   const theme = {
     colors: {
       heading: "rgb(24 24 29)",
@@ -30,38 +32,23 @@ const App = () => {
     media: { mobile: "768px", tab: "998px" },
   };
 
-
   return (
     <ThemeProvider theme={theme}>
-    <BrowserRouter>
-    <Header></Header>
-      <Routes>
-        <Route 
-          path='/'
-          element={<Home></Home>}
-        
-        ></Route>
-        <Route 
-          path='/about'
-          element={<About></About>}
-        
-        ></Route>
-        <Route 
-          path='/services'
-          element={<Services></Services>}
-        
-        ></Route>
-        <Route 
-          path='/contact'
-          element={<Contact></Contact>}
-        
-        ></Route>
-      </Routes>
-      <Footer></Footer>
+      <GlobalStyle />
+      <GoToTop />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/service" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
 
-    </BrowserRouter>
+        <Footer />
+      </BrowserRouter>
     </ThemeProvider>
-
   );
 };
 
